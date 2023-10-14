@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'PT Sans', sans-serif; -->
+</head>
+
+<body>
+
+    <nav id="navbar">
+         <div id="logo"> 
+             <!-- Just for covering space  -->
+        </div> 
+
+        <ul>
+            <li class="item"> <a href="#home" >Home </a> </li>
+            <li class="item"> <a href="#fakenews">Introduction </a> </li>
+            <li class="item"> <a href="#detection">Detection </a> </li>
+           <li class="item"> <a href="#stats">Statistics </a> </li>
+            <li class="item"> <a href="#about_us">About us </a> </li>
+            <li class="item"> <a href="#contact_us">Contact us</a> </li>
+        </ul>
+
+    </nav>
+
+    <section id="home">
+        <h1 class="h-primary">Welcome to  <br>  VeriNews <br> </h1>
+
+    </section>
+    <section class="fakenews-container">
+        <br>
+        <div id="fakenews">
+            <br><br><br>
+            <h1 class="h-secondary center">Fake News</h1>
+            <div class="mainbox">
+                <div class="box1 box">
+                <h2 class="h-secondary center">What is a Fake News??</h2>
+                <div class="one">
+                <img src="{{url_for('static', filename='Assets/Images/hacker.jpg')}}" alt="">
+           
+                <p class="center">Fake news is any false or misleading information presented as news and communicated in
+                    formats spanning spoken and written.
+                    Fake news can reduce the impact of real news by competing with it and has the 
+                    potential to undermine trust in serious media coverage.
+                    <!-- Fake news brainwashes people overtime. -->
+                </p></div>
+            </div>
+        
+            <div class="box2 box">
+                <h2 class="h-secondary center">Impact of Fake News</h2>
+                <div class="one">
+                <img src="{{url_for('static', filename='Assets/Images/guy.jpg')}}" alt="">
+           
+                <p class="center">
+                <ul>
+                    <li>Financial impacts or impacts on our health</li>
+                    <li>Fear</li>
+                    <li>Racist ideas</li>
+                    <li>Bullying and violence against innocent people</li>
+                    <li>Democratic impacts </li>
+                </ul>
+
+                </p>
+            </div></div>
+            <div class="box1 box">
+                <h2 class="h-secondary center">About this Website</h2>
+                <div class="one">
+                    <img src="{{url_for('static', filename='Assets/Images/turn.jpg')}}" alt="">
+                    <p class="center">Fake News Detection Website is utility tool where one can check whether the news provided by him/her through its url 
+                        or content is Fake or Real and also 
+                         one can get to see the statistics of fake news year wise, country wise and platform wise.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+
+    <section id="detection"> 
+        <div class="result" id="fake">
+            <h2>Is it Fake?</h2>
+            <div class="result_box">
+                <p id="fakepara" >Yes, it is Fake*</p>
+            </div>
+            <img src="{{url_for('static', filename='Assets/Images/left.jpg')}}" alt="">
+        </div>
+        <div id=detectbox>
+                <h1 >Detection</h1>
+                <form action="" method="POST">
+                <div class="detection-box ">
+                    <div class="textbox">
+                   
+                    <input type="url" placeholder="Enter url" name="NewsUrl" value="">
+                    
+                </div>
+                <button class="btn" name="Submit_B" type="submit" value="URLnews">Submit</button>
+                <h2>OR</h2>
+            </div>
+            <div class="detection-box">
+                <div class="textbox">
+                    
+                    <input type="text" placeholder="Enter Content" name="content" value="">
+                    
+                </div>
+                <button class="btn" name="Submit_B" type="submit" value="newsContent">Submit</button>
+            </div>
+        </form>
+        </div>
+        <div class="result" id="real">
+            <h2>Is it Real?</h2>
+            <div class="result_box">
+                <p id="realpara" >Yes, it is Real*</p>
+            </div>
+             <img src="{{url_for('static', filename='Assets/Images/right.jpg')}}" alt="">
+        </div>
+
+    </section>
+    <div class="disc">
+         
+         
+       <b> Source of datasets used in the above detection models:</b> <br>
+       www.kaggle.com
+        <br>
+       <b> *Disclaimer: </b> The datasets used to train the model has been extracted in April, 2021.The accuracy of the above model is <b> 94.5%<br>Therefore it does not impose its 
+        result to completely accurate or declare any website or news source to be fraud.
+    </div>
+       
+        <!-- <section id="stats">
+            <h1>Statistics</h1>
+            <div class="statistics">
+             
+                 <div ><img  src="{{url_for('static', filename='Assets/StatsGraphs/Share of adults who have witnessed fake news on television versus print media worldwide in 2019 (2).jpg')}}" alt="" class="zoom" ></div>
+                 <div id="graphtwo" ><img   src="{{url_for('static', filename='Assets/StatsGraphs/Level of difficulty differentiating between true and false information online among consumers in different countries 2020 (6).jpg')}}" alt="" class="zoom"></div>
+                 
+
+                
+                    <div ><img src="{{url_for('static', filename='Assets/StatsGraphs/Main source of information about news and current affairs in 2020 (1).jpg')}}" alt="" class="zoom"></div>
+                    <div ><img   src="{{url_for('static', filename='Assets/StatsGraphs/Main source of information about news and current affairs in different countries 2020 (5).jpg')}}" alt="" class="zoom"></div>
+               
+                
+                    <div ><img   src="{{url_for('static', filename='Assets/StatsGraphs/Main source of information about news and current affairs in selected countries worldwide as of June 2020.jpg')}}" alt="" class="zoom"></div>
+                    <div ><img   src="{{url_for('static', filename='Assets/StatsGraphs/Share of adults who have witnessed fake news on print media countruwise in 2019.png')}}" alt="" class="zoom"></div>
+                    
+               
+                    <div ><img  src="{{url_for('static', filename='Assets/StatsGraphs/Level of difficulty differentiating between true and false information online among consumers in 2020.jpg')}}" alt="" class="zoom"></div>
+                    <div ><img  src="{{url_for('static', filename='Assets/StatsGraphs/Share of adults who have witnessed fake news on television countruwise in 2019.jpg')}}" alt="" class="zoom"></div>
+                    <br><br>
+                    <br>
+                    <br>
+                    <div class="disc"><b> Source:</b> Statista.com <br>
+
+                        <b> *Disclaimer:</b> The information of these graphs have been extracted through online surveys performed by various organizations. <br> Therefore it does not impose its results to be completely accurate or impose it on 
+                        other countries or in any way indicate future results.</div>
+             
+            </div>
+        </section> -->
+    <!-- About us Section-->
+        <section id="about_us">
+            <h1>About Us</h1>
+            <div class="about">
+                <div class="row">
+                 <div class="one_row_of_member">   
+                <!-- Sayali T Rathod  -->
+                <div class="member">
+                    <img src="{{url_for('static', filename='Assets/Images/Sayali.jpg')}}" alt="">
+                    <h2>Sayali Rathod</h2>
+                    <p>Team Member</p>
+                    <div class="links">
+
+                        <a href="mailto:rathodsayali056@gmail.com"><img src="{{url_for('static', filename='Assets/Images/mail.svg')}}" alt=""></a>
+                        <a href="https://github.com/SayaliRathod"><img src="{{url_for('static', filename='Assets/Images/github.svg')}}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/sayali-rathod-742873201/"><img src="{{url_for('static', filename='Assets/Images/linkedin.svg')}}" alt=""></a>
+                        <a href="https://instagram.com/sayalit_rathod?igshid=MzRlODBiNWFlZA=="><img src="{{url_for('static', filename='Assets/Images/instagram.svg')}}" alt=""></a>
+                    </div>
+                </div>
+
+                <!-- Dhananjay Chandrashekhar Kajale  -->
+                <div class="member">
+                    <img src="{{url_for('static', filename='Assets/Images/Dhananjay.jpg')}}" alt="">
+                    <h2>Dhananjay Kajale</h2>
+                    <p>
+                        Team Leader</p>
+                    <div class="links">
+
+                        <a href="mailto:dhanukajale7@gmail.com"><img src="{{url_for('static', filename='Assets/Images/mail.svg')}}" alt=""></a>
+                        <a href="https://gitHub.com/dhananjaykajale751"><img src="{{url_for('static', filename='Assets/Images/github.svg')}}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/dhananjay-chandrashekhar-kajale-252904223/"><img src="{{url_for('static', filename='Assets/Images/linkedin.svg')}}" alt=""></a>
+                        <a href="https://instagram.com/dhananjay.kajale751"><img src="{{url_for('static', filename='Assets/Images/instagram.svg')}}" alt=""></a>
+                    </div>
+                </div></div>
+
+
+                <!-- Simran Manoj Kumar  -->
+                
+                <div class="one_row_of_member">
+                <div class="member">
+                    <img src="{{url_for('static', filename='Assets/Images/Simran.jpg')}}" alt="">
+                    <h2>Simran Kumar</h2>
+                    <p>Team Member
+                    </p>
+                    <div class="links">
+
+                        <a href="mailto:simranku2301@gmail.com"><img src="{{url_for('static', filename='Assets/Images/mail.svg')}}" alt=""></a>
+                        <a href="https://gitHub.com/simrankumar2301"><img src="{{url_for('static', filename='Assets/Images/github.svg')}}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/simran-kumar-38a857207/"><img src="{{url_for('static', filename='Assets/Images/linkedin.svg')}}" alt=""></a>
+                        <a href="https://instagram.com/imsimran_0601"><img src="{{url_for('static', filename='Assets/Images/instagram.svg')}}" alt=""></a>
+                    </div>
+                </div>
+
+                <!-- PrajwalSingh Solanki  -->
+                <div class="member">
+                    <img src="{{url_for('static', filename='Assets/Images/Prajwal.jpg')}}" alt="">
+                    <h2>PrajwalSingh Solanki</h2>
+                    <p>Team Member</p>
+                    <div class="links">
+
+                        <a href="mailto:1218.prajwalsolanki2002@gmail.com"><img src="{{url_for('static', filename='Assets/Images/mail.svg')}}" alt=""></a>
+                        <a href="github.com"><img src="{{url_for('static', filename='Assets/Images/github.svg')}}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/prajwalsingh-solanki-794342232"><img src="{{url_for('static', filename='Assets/Images/linkedin.svg')}}"   alt=""></a>
+                        <a href="https://instagram.com/prajwal._.solanki"><img src="{{url_for('static', filename='Assets/Images/instagram.svg')}}" alt=""></a>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+
+    <form action="mailto:dhanukajale7@gmail.com" method="POST">
+    <section id="contact_us">
+        <div class="contact">
+            <h2>Get In Touch</h2>
+            <div class="form">
+                <input type="text" placeholder="Enter Your Name" name="Name" value="">
+            </div>
+                <div class="form">
+                    <input type="tel" placeholder="Enter Your Phone No." name="" value="">
+                </div>
+                    <div class="form">
+                        <input type="email" placeholder="Enter Your Email Id" name="" value="">
+                    </div>
+                        <div class="form">
+                <input type="text" placeholder="Enter Your Feedback" name="Feedback" value="">
+
+            </div>
+            <div class="button">
+                <button class="bttn" name="Submit_B" type="submit" value="message">Submit</button>
+            </div>
+
+            {% if send=="success" %}
+                <div class="mail">Response recorded. Thanks for feedback. </div>
+            {% elif send=="not success" %}
+                <div class="mail">Feedback can't be empty.Enter some feedback </div>
+            {% endif %}
+        </div>
+        
+        
+    </section>
+</form>
+
+{% if scroll %}
+<script>
+    document.getElementById('{{ scroll }}').scrollIntoView();
+</script>
+{% endif %}
+
+</body>
+
+<script type="text/javascript" src="{{url_for('static', filename='JavaScript/detect.js')}}"></script>
+<script type="text/javascript">
+    {% if (prediction)== [1] %}
+        showreal();
+    {% elif (prediction)== [0] %}
+        showfake();
+    {% endif %}
+ </script>
+
+</html>
